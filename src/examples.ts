@@ -19,6 +19,6 @@ export const examples = {
   -H 'Accept: application/json'`,
   cookie: `curl 'https://api.example.com/v1/profile' \\
   -b 'session=demo-session; theme=light' \\
-  -H 'Accept: application/json'`
+  -H 'Accept: application/json'`,
 };
 export type ExampleKey = keyof typeof examples;
