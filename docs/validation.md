@@ -30,3 +30,9 @@
 ## 边界
 
 未对所有浏览器、所有curl选项或客户端网络行为做兼容性保证；没有向示例地址发送请求。脱敏是规则替换，仍需人工核对。npm注册表正式发布需要独立身份授权，不以tarball安装通过作为发布成功的证据。
+
+## npm正式发布验证
+
+2026-10-22（Asia/Shanghai），`npm publish`完成身份与发布验证后返回`+ @batype/reqnote@1.0.0`。等待npm处理后，公开注册表查询返回1.0.0，SHA-1为`27b20a62272a25ec9403c54c9fb23fded9d80b18`，与已验证tarball一致。
+
+随后在项目外使用独立空缓存、`--userconfig=/dev/null`、官方registry和`--ignore-scripts`安装`@batype/reqnote@1.0.0`，五种API目标的默认脱敏与19位数字原文检查全部通过；安装后的CLI stdin转换及`--version`通过（1.0.0）。此验证使用注册表包，不是本地tarball替代安装。

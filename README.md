@@ -33,7 +33,14 @@ npm run dev
 
 ## Node API / CLI
 
-npm官方注册表是否可用以实际公开发布状态为准；未正式发布前可以从[GitHub Release](https://github.com/batype/reqnote/releases)安装tarball，或在源码中构建后调用。
+已发布到[npm：@batype/reqnote](https://www.npmjs.com/package/@batype/reqnote)。也可从[GitHub Release](https://github.com/batype/reqnote/releases)下载tarball。
+
+```sh
+npm install @batype/reqnote
+npx --yes --package=@batype/reqnote reqnote --in request.curl --to python --out request-redacted.py
+```
+
+在源码中运行：
 
 ```sh
 npm run build:core
