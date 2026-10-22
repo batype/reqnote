@@ -1,0 +1,64 @@
+{
+  "name": "@batype/reqnote",
+  "version": "1.0.0",
+  "description": "Local cURL request inspector, code generator and rule-based redaction. React + Vite web app and Node API/CLI.",
+  "type": "module",
+  "license": "MIT",
+  "engines": {
+    "node": ">=22.14"
+  },
+  "exports": {
+    ".": {
+      "types": "./lib/core/index.d.ts",
+      "import": "./lib/core/index.js"
+    }
+  },
+  "bin": {
+    "reqnote": "./bin/reqnote.mjs"
+  },
+  "files": [
+    "lib/core/",
+    "bin/",
+    "README.md",
+    "LICENSE",
+    "THIRD-PARTY-LICENSES.txt"
+  ],
+  "scripts": {
+    "dev": "vite --host 127.0.0.1 --port 4182 --strictPort",
+    "build:core": "tsc -p tsconfig.core.json",
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "test": "npm run build:core && node --test tests/*.test.mjs",
+    "build": "npm run typecheck && npm run build:core && vite build",
+    "preview": "vite preview --host 127.0.0.1 --port 4183 --strictPort",
+    "prepack": "npm run build:core"
+  },
+  "dependencies": {
+    "jsonc-parser": "3.3.1"
+  },
+  "devDependencies": {
+    "@types/react": "19.3.0",
+    "@types/react-dom": "19.3.0",
+    "@vitejs/plugin-react": "6.1.2",
+    "typescript": "7.0.2",
+    "vite": "8.3.5",
+    "react": "19.3.1",
+    "react-dom": "19.3.1"
+  },
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/batype/reqnote.git"
+  },
+  "homepage": "https://batype.github.io/reqnote/",
+  "keywords": [
+    "curl",
+    "fetch",
+    "axios",
+    "redaction",
+    "http",
+    "developer-tools"
+  ]
+}
